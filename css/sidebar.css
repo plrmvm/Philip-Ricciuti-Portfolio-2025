@@ -1,0 +1,23 @@
+.sidebar-item{
+    margin: 25px;
+}
+
+.sidebar-text{
+    text-decoration: none;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 250;
+    color: #707070;
+}
+
+.sidebar-text:hover{
+    color: #000000;
+    cursor: pointer;
+    transition: 0.1s;
+    font-weight: 300;
+}
+
+.sidebar-text.active{
+    color: #000000;
+    font-weight: 500;
+}
