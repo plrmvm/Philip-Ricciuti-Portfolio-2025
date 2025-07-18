@@ -1,6 +1,32 @@
+/* normalize page ---> normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import "normalize.css";
 /* import sidebar sheets */
 @import "sidebar.css";
 /* import typography styles */
 @import "typography.css";
-/* normalize page ---> normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-@import "normalize.css";
+/* import images style */
+@import "images.css";
+
+:root {
+    --sidebar-width: 200px;
+    --margin-size: 25px;
+}
+
+.main-content{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: calc(var(--sidebar-width) + 3 * var(--margin-size));
+    margin-right: var(--margin-size);
+    margin-top: var(--margin-size);
+    text-align: left;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.main-content-bottom-margin{
+    margin-bottom: 500px;
+}

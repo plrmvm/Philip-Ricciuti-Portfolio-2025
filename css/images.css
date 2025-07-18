@@ -1,0 +1,23 @@
+.project-img{
+    width: 100%;
+    aspect-ratio: 2.37/1;
+    display: block;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+    border: 0px solid #e0e0e0;
+    transition: border 0.2s ease-in-out;
+}
+
+.project-img:hover{
+    width: 100%;
+    aspect-ratio: 2.37/1;
+    display: block;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+    cursor: pointer;
+    border: 3px solid #6c3ef2;
+}

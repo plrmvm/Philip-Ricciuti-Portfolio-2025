@@ -1,23 +1,103 @@
-.sidebar-item{
-    margin: 25px;
+.sidebar {
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* vertically spaced */
+    padding: var(--margin-size);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    max-width: var(--sidebar-width);
+    z-index: 1;
+}
+.sidebar-item {
+    margin: 0 0 var(--margin-size) 0;
 }
 
-.sidebar-text{
+.sidebar-text {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     text-align: left;
     font-size: 24px;
     font-weight: 250;
     color: #707070;
+    transition: color 0.2s ease-in, color 0.3s ease-out, font-weight 0.2s ease-in, font-weight 0.4s ease-out;
+    padding-left: 0;
+    margin-left: 0;
 }
 
-.sidebar-text:hover{
+.sidebar-text:hover {
     color: #000000;
     cursor: pointer;
-    transition: 0.1s;
     font-weight: 300;
 }
 
-.sidebar-text.active{
+.sidebar-text.active {
     color: #000000;
     font-weight: 500;
+}
+
+/* Dot styles */
+.nav-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.sidebar-text.active .nav-dot {
+    background-color: #6c3ef2; /* Purple for active */
+}
+
+.sidebar-logo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: calc(2 * var(--margin-size));
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-logo {
+    vertical-align: top;
+}
+
+.sidebar-email {
+    margin-bottom: 38px;
+}
+
+.sidebar-blank {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.sidebar-line {
+    position: absolute;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 75%;
+    background-color: #000;
 }
