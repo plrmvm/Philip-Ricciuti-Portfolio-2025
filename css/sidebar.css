@@ -16,43 +16,84 @@
     margin: 0 0 var(--margin-size) 0;
 }
 
+/* Sidebar link text */
 .sidebar-text {
     display: flex;
     align-items: center;
     text-decoration: none;
     text-align: left;
-    font-size: 24px;
-    font-weight: 250;
+    font-size: 25px;
+
+    /* Use a supported weight; 250 often maps to a fallback and can flicker */
+    font-weight: 300;
+
     color: #707070;
-    transition: color 0.2s ease-in, color 0.3s ease-out, font-weight 0.2s ease-in, font-weight 0.4s ease-out;
+
+    /* Only animate cheap properties */
+    transition:
+        color 260ms ease,
+        opacity 360ms ease,
+        transform 400ms cubic-bezier(.2, .8, .2, 1);
+
+
     padding-left: 0;
     margin-left: 0;
+
+    /* Helps isolate layout changes within the element (optional) */
+    contain: layout paint style;
 }
 
 .sidebar-text:hover {
     color: #000000;
+    font-weight: 700;
     cursor: pointer;
-    font-weight: 300;
+
+    /* Smooth, GPU-friendly feedback instead of changing weight */
+    transform: translateX(2px);
+    opacity: 0.95;
 }
 
+/* Keep active bold if you want stronger emphasis (applies once, not every hover) */
 .sidebar-text.active {
     color: #000000;
-    font-weight: 500;
+    font-weight: 700;
 }
 
-/* Dot styles */
+/* Dot animations are cheap and feel smooth */
 .nav-dot {
     display: inline-block;
     width: 10px;
     height: 10px;
     background-color: #e0e0e0;
-    border-radius: 2px;
+    border-radius: 1px;
     margin-right: 10px;
     flex-shrink: 0;
+
+    transition:
+        transform 400ms cubic-bezier(.2, .8, .2, 1),
+        background-color 400ms ease;
 }
 
-.sidebar-text.active .nav-dot {
-    background-color: #6c3ef2; /* Purple for active */
+.nav-dot.active {
+    background-color: var(--active-color);
+}
+
+
+.sidebar-text:hover .nav-dot {
+    transform: scale(1.15);
+    background-color: var(--active-color);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-text, .nav-dot {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+.sidebar-nav:hover .sidebar-text:not(:hover) .nav-dot.active {
+    background-color: #e0e0e0;
 }
 
 .sidebar-logo {
@@ -80,8 +121,14 @@
     vertical-align: top;
 }
 
-.sidebar-email {
-    margin-bottom: 38px;
+/* When hovering anywhere in the nav, dim all non-hovered items */
+.sidebar-nav:hover .sidebar-text:not(:hover) {
+    color: #707070;
+    font-weight: 300; /* will switch immediately unless you add a transition */
+}
+
+.nav-dot.active:hover .nav-dot.active:not(:hover){
+    background-color: #e0e0e0;
 }
 
 .sidebar-blank {
@@ -93,11 +140,15 @@
 
 .sidebar-line {
     position: absolute;
-    margin-top: 30px;
+    margin-top: 37px;
     margin-bottom: 15px;
     top: 0;
     right: 0;
     width: 1px;
     height: 75%;
     background-color: #000;
+}
+
+.sidebar-email {
+    margin-bottom: 38px;
 }

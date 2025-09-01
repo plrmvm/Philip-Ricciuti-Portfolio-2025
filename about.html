@@ -5,6 +5,39 @@
     <title>PHILIP RICCIUTI - ABOUT</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="images/logo.ico" type="image/x-icon">
+    <style>
+        .about{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .about-column {
+            flex: 50%;
+        }
+
+        .about-img{
+            display: inline-block;
+            aspect-ratio: 1/1.1;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 3px;
+            margin-top: 11px;
+            margin-left: 0px;
+            margin-right: 12px;
+        }
+
+        .about-text{
+            margin-top: 11px;
+            margin-left: 12px;
+            margin-right: 0px;
+        }
+
+        h3{
+            margin-bottom: 0px;
+            margin-top: 0px;
+            font-weight: 800;
+        }
+    </style>
 </head>
 <body>
 <div class="sidebar"> <!-- SIDEBAR -->
@@ -30,12 +63,12 @@
             </li>
             <li class="sidebar-item"> <!-- ABOUT -->
                 <a href="about.html" class="sidebar-text active">
-                    <span class="nav-dot"></span>
+                    <span class="nav-dot active"></span>
                     About
                 </a>
             </li>
             <li class="sidebar-item"> <!-- CONTACT -->
-                <a href="#" class="sidebar-text">
+                <a href="contact.html" class="sidebar-text">
                     <span class="nav-dot"></span>
                     Contact
                 </a>
@@ -43,13 +76,31 @@
         </ul>
     </div>
     <div class="sidebar-blank">
-        <footer class="sidebar-email">PhilipRicciuti@outlook.com</footer>
+        <footer class="sidebar-email">PLR3D.COM </footer>
     </div>
     <div class = "sidebar-line"></div>
 </div>
 <div class="main-content">
     <h1>ABOUT.</h1> <!-- TITLE OF PAGE-->
-
+    <div class="about">
+        <div class="about-column">
+            <img class="about-img" src="images/about-me.jpg" alt="about me">
+        </div>
+        <div class="about-column">
+            <div class="about-text">
+                <h3>ARTIST STATEMENT</h3>
+                <p>
+                    Philip Ricciuti is a New York City–based 3D designer and street photographer with a degree in 3D Digital Design from the Rochester Institute of Technology and a minor in Jewelry Design.
+                    <br><br>
+                    With a lifelong, obsessive drive to create, his work blends product visualization, lighting, industrial design, and photorealistic rendering into striking visual narratives.
+                    <br><br>
+                    Proficient in tools like Blender, Houdini, Maya, Substance Painter, Unreal Engine 5, and the Adobe Creative Suite, Philip brings both technical precision and artistic intent to his projects.
+                    <br><br>
+                    Outside the studio, he’s a dedicated street photographer with a prolific catalog, constantly shooting and creating as part of his daily rhythm.
+                </p>
+            </div>
+        </div>
+    </div>
     <div class="main-content-bottom-margin"></div>
 </div>
 </body>
