@@ -85,13 +85,28 @@ footer{
     font-weight: 600;
     margin-top: 0;
     color: #000000;
+    text-align: center;
     text-decoration: none;
     transition: font-size 0.25s ease, color 0.25s ease;
 }
 
 .contact-text:hover{
     color: var(--active-color);
-    font-size: 60px;
+    font-size: 53px;
+}
+
+.resume-download{
+    color: var(--active-color);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 0;
+    text-decoration: None;
+    transition: font-size 0.25s ease, color 0.25s ease;
+}
+
+.resume-download:hover{
+    font-size: 20.5px;
 }
 
 /* RULES */

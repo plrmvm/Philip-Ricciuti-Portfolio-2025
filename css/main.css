@@ -19,11 +19,14 @@
     --sidebar-width: 250px;
     --margin-size: 25px;
     --active-color: #5767bf;
+    --contact-gap: 12px
 }
 
 .main-content{
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     vertical-align: top;
+    min-height: 100dvh; /* or 100vh */
     margin-left: calc(var(--sidebar-width) + 3 * var(--margin-size));
     margin-right: var(--margin-size);
     margin-top: var(--margin-size);
@@ -35,11 +38,16 @@
 }
 
 body {
-    display: flex;
-    flex-direction: row;
+    height: 100%;
     margin: 0;
 }
 
 .main-content-bottom-margin{
     margin-bottom: 150px;
+}
+
+@media screen and (max-width: 800px) {
+    .main-content{
+        margin-left: calc(var(--margin-size));;
+    }
 }
