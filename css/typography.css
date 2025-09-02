@@ -80,6 +80,19 @@ footer{
     text-decoration: underline;
 }
 
+.contact-text{
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 0;
+    color: #000000;
+    text-decoration: none;
+    transition: font-size 0.25s ease, color 0.25s ease;
+}
+
+.contact-text:hover{
+    color: var(--active-color);
+    font-size: 60px;
+}
 
 /* RULES */
 

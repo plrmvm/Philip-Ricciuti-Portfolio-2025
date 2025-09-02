@@ -1,0 +1,28 @@
+/* Parent that wraps the four columns */
+.contact-row {
+    display: flex;
+    justify-content: center;   /* centers the set of columns as a group */
+    align-items: stretch;      /* or 'center' if you want equal vertical centering */
+    gap: 12px;                 /* space between columns */
+    flex-wrap: wrap;           /* wrap on smaller screens */
+}
+
+/* Individual columns */
+.contact-columns {
+    /* stop floating; become flex items instead */
+    float: none;
+    width: 25%;
+    min-width: 220px;          /* optional: helps responsiveness */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+
+    /* center content inside each column */
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* horizontal content centering inside column */
+    justify-content: center;   /* vertical content centering inside column */
+
+    margin: 0;                 /* margin:auto not needed here */
+    height: auto;              /* avoid 100% unless parent has an explicit height */
+}

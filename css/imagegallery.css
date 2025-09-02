@@ -1,4 +1,4 @@
-.column {
+.img-gallery-column {
     float: left;
     width: 33.33%;
     padding: 10px;
@@ -28,13 +28,13 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .column {
+    .img-gallery-column {
         width: 50%;
     }
 }
 
 @media screen and (max-width: 800px) {
-    .column {
+    .img-gallery-column {
         width: 100%;
     }
 }

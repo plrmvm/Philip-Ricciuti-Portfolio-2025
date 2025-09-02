@@ -8,6 +8,8 @@
 @import "images.css";
 /* import image gallery style */
 @import "imagegallery.css";
+/* import contact styles */
+@import "contact.css";
 
 @view-transition {
     navigation: auto;
