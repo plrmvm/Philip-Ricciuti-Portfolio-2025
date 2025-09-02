@@ -6,6 +6,8 @@
 @import "typography.css";
 /* import images style */
 @import "images.css";
+/* import image gallery style */
+@import "imagegallery.css";
 
 @view-transition {
     navigation: auto;

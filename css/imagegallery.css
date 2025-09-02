@@ -1,0 +1,67 @@
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box; /* include padding in the width */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.photography-img{
+    max-width: 100%; /* Ensures the image doesn't exceed the column's width */
+    height: auto;    /* Maintains the image's aspect ratio */
+    display: block;  /* Prevents extra space below the image */
+    border-radius: 3px;
+    margin-top: 20px;
+    transition:transform 0.25s ease;
+}
+
+.photography-img:hover{
+    transform:scale(1.02);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.lightbox[hidden] { display: none; }
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.lightbox__img {
+    max-width: min(90vw, 1600px);
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+.lightbox__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: 0;
+    font-size: 2rem;
+    line-height: 1;
+    padding: .25rem .5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
