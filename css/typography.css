@@ -79,3 +79,18 @@ footer{
     line-height: 1.5;
     text-decoration: underline;
 }
+
+
+/* RULES */
+
+@media screen and (max-width: 1400px) {
+    h1 {
+        font-size: 57px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 40px;
+    }
+}
