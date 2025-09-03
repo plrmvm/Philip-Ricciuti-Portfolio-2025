@@ -10,10 +10,8 @@
 @import "imagegallery.css";
 /* import contact styles */
 @import "contact.css";
-
-@view-transition {
-    navigation: auto;
-}
+/* import transition styles */
+@import "transition.css";
 
 :root {
     --sidebar-width: 250px;

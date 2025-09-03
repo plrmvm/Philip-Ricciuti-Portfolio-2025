@@ -149,6 +149,16 @@
     background-color: #000;
 }
 
+.hamburger-button {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 5%;
+    right: 5%;
+    visibility: hidden;
+    z-index: 8;
+}
+
 .sidebar-email {
     margin-bottom: 38px;
 }
@@ -156,5 +166,11 @@
 @media screen and (max-width: 800px) {
     .sidebar {
         visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .nav-button {
+        visibility: visible;
     }
 }

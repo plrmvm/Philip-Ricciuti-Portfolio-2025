@@ -81,7 +81,7 @@ footer{
 }
 
 .contact-text{
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 600;
     margin-top: 0;
     color: #000000;
@@ -92,7 +92,7 @@ footer{
 
 .contact-text:hover{
     color: var(--active-color);
-    font-size: 53px;
+    font-size: 38px;
 }
 
 .resume-download{
@@ -111,7 +111,7 @@ footer{
 
 /* RULES */
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1425px) {
     h1 {
         font-size: 57px;
     }
