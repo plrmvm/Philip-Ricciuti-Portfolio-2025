@@ -17,6 +17,13 @@
 
 @media screen and (max-width: 1400px) {
     .contact-container{
-        grid-template-columns: repeat(2, minmax(400px, 1fr));
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-container{
+        margin-top: 80px;
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
     }
 }

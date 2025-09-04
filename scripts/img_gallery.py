@@ -3,10 +3,11 @@ from PIL import Image
 
 IMG_DIRECTORY = "C:/Users/P3210/WebstormProjects/Portfolio/images/photography"
 THUMBNAIL_DIRECTORY = "C:/Users/P3210/WebstormProjects/Portfolio/images/photography"
-TEMPLATE = "C:/Users/P3210/WebstormProjects/Portfolio/photography_template.html"
-HTML_WRITE_PATH= "C:/Users/P3210/WebstormProjects/Portfolio/photography.html"
-IMG_RELATIVE_PATH = "images/photography/"
+TEMPLATE = "C:/Users/P3210/WebstormProjects/Portfolio/pages/templates/photography_template.html"
+HTML_WRITE_PATH= "C:/Users/P3210/WebstormProjects/Portfolio/pages/photography.html"
+IMG_RELATIVE_PATH = "../images/photography/"
 CSS_IMG_CLASS = "photography-img"
+FILE_FORMATS = [".jpg", ".jpeg", ".png", ".webp", ".gif"]
 
 class ImgGallery:
 
@@ -69,7 +70,7 @@ def main(directory):
     img_instances = []
     for file in os.listdir(directory):
         _, ext = os.path.splitext(file)
-        if ext.lower() == ".jpg":
+        if ext.lower() in FILE_FORMATS:
             path = directory + "/" + file
             img_instances.append((file, ImgGallery(file, path)))
     ImgGallery.compile()

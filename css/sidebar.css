@@ -10,6 +10,7 @@
     left: 0;
     width: var(--sidebar-width);
     max-width: var(--sidebar-width);
+    transition: opacity 260ms ease;
     visibility: visible;
 }
 .sidebar-item {
@@ -150,11 +151,12 @@
 }
 
 .hamburger-button {
+    font-size: 50px;
     position: fixed;
     display: flex;
     flex-direction: column;
-    top: 5%;
-    right: 5%;
+    top: 15px;
+    right: 15px;
     visibility: hidden;
     z-index: 8;
 }
@@ -167,10 +169,10 @@
     .sidebar {
         visibility: hidden;
     }
-}
-
-@media screen and (max-width: 800px) {
-    .nav-button {
+    .sidebar-email {
+        visibility: hidden;
+    }
+    .hamburger-button {
         visibility: visible;
     }
 }
