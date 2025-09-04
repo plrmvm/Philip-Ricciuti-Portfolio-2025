@@ -2,6 +2,7 @@ import os
 from PIL import Image
 
 IMG_DIRECTORY = "C:/Users/P3210/WebstormProjects/Portfolio/images/photography"
+THUMBNAIL_DIRECTORY = "C:/Users/P3210/WebstormProjects/Portfolio/images/photography"
 TEMPLATE = "C:/Users/P3210/WebstormProjects/Portfolio/photography_template.html"
 HTML_WRITE_PATH= "C:/Users/P3210/WebstormProjects/Portfolio/photography.html"
 IMG_RELATIVE_PATH = "images/photography/"
@@ -53,16 +54,16 @@ class ImgGallery:
             print(template[0])
         with open(HTML_WRITE_PATH, "w") as f:
             f.write(template[0])
-            f.write('<div class="row">\n        <div class="column">\n')
+            f.write('<div class="row">\n        <div class="img-gallery-column">\n')
             for link in ImgGallery.column1_list:
-                f.write('        <img src=' + link + ' alt=' + link + ' class="' + CSS_IMG_CLASS + '">\n')
-            f.write('</div>\n        <div class="column">\n')
+                f.write('        <img src=' + link + ' alt=' + link + ' class="' + CSS_IMG_CLASS + '" loading=lazy>\n')
+            f.write('</div>\n        <div class="img-gallery-column">\n')
             for link in ImgGallery.column2_list:
-                f.write('        <img src=' + link + ' alt=' + link + ' class="' + CSS_IMG_CLASS + '">\n')
-            f.write('</div>\n        <div class="column">\n')
+                f.write('        <img src=' + link + ' alt=' + link + ' class="' + CSS_IMG_CLASS + '" loading=lazy>\n')
+            f.write('</div>\n        <div class="img-gallery-column">\n')
             for link in ImgGallery.column3_list:
-                f.write('        <img src=' + link + ' alt=' + link + ' class="' + CSS_IMG_CLASS + '">\n')
-            f.write('        </div>\n    </div>\n    <div class="main-content-bottom-margin"></div>\n</div>\n</body>\n</html>')
+                f.write('        <img src=' + link + ' alt=' + link + ' class="' + CSS_IMG_CLASS + '" loading=lazy>\n')
+            f.write(template[1])
 
 def main(directory):
     img_instances = []
