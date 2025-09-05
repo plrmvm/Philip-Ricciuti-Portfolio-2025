@@ -1,3 +1,5 @@
+// ignore missing import statement warnings
+
 document.addEventListener('DOMContentLoaded', () => {
     const ease = "power4inOut" // Variable for easing
     const links = [ // List of links to allow transitions

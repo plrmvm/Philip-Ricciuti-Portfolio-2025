@@ -4,22 +4,13 @@
     <meta charset="UTF-8">
     <title>PHILIP RICCIUTI - CONTACT</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="icon" href="images/logo.ico" type="image/x-icon">
-    <style>
-        @media screen and (max-width: 800px) {
-            h1 {
-                text-align: center;
-            }
-        }
-    </style>
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon">
 </head>
 <body>
 <div class="sidebar"> <!-- SIDEBAR -->
     <div class="sidebar-logo"> <!-- LOGO -->
         <a href="index.html" class="nameblock">PHILIP <br>RICCIUTI<br></a>
-        <div>
-            <a href="index.html" class="nameblock-subtext">3D ARTIST & DESIGNER</a>
-        </div>
+        <a href="index.html" class="nameblock-subtext">3D ARTIST & DESIGNER</a>
     </div>
     <div class="sidebar-nav"> <!-- NAVIGATION -->
         <ul>
@@ -54,15 +45,27 @@
     </div>
     <div class = "sidebar-line"></div>
 </div>
-<button class="hamburger-button">
-    X
-</button>
+<div class="mobile-nav-mask"></div>
 <div class="mobile-nav">
+    <div class = mobile-nav-top>
+        <button class="hamburger-button">X</button>
+        <a href="index.html" class="mobile-nameblock">PHILIP <br>RICCIUTI <br></a>
+        <a href="index.html" class="mobile-nameblock-subtext">3D ARTIST & DESIGNER</a>
+        <div class="mobile-horizontal-line"></div>
+    </div>
+    <div class = mobile-nav-menu>
+        <a href="index.html" class="mobile-nav-links">3D DESIGN</a><br>
+        <a href="photography.html" class="mobile-nav-links">PHOTOGRAPHY</a><br>
+        <a href="about.html" class="mobile-nav-links">ABOUT</a><br>
+        <a href="contact.html" class="mobile-nav-links active">CONTACT</a><br>
+    </div>
+    </div>
+</div>
 <div class="main-content">
     <h1>CONTACT.</h1> <!-- TITLE OF PAGE-->
     <div class = "contact-container">
         <a href="mailto: PhilipRicciuti@outlook.com" target="_blank" class = "contact-text">EMAIL</a>
-        <a href="http://linkedin.com/in/phil-ricciuti-b20492229" target="_blank" class = "contact-text">LINKDIN</a>
+        <a href="https://linkedin.com/in/phil-ricciuti-b20492229" target="_blank" class = "contact-text">LINKDIN</a>
         <a href="https://discordapp.com/users/plrmvm" target="_blank" class = "contact-text">DISCORD</a>
         <a href="https://www.instagram.com/filricc/" target="_blank" class = "contact-text">INSTAGRAM</a>
     </div>
@@ -71,10 +74,10 @@
 <div class="transition-block-edge"></div>
 <div class="transition-block"></div>
 <div>
-    <script defer src="../scripts/sidebar.js"></script>
+    <script defer src="../scripts/mobile.js"></script>
     <script defer src="../plugins/gsap-public/minified/gsap.min.js"></script>
     <script defer src="../plugins/gsap-public/minified/SplitText.min.js"></script>
     <script defer src="../scripts/transition.js"></script>
-</div>
+</div> <!-- SCRIPTS -->
 </body>
 </html>
