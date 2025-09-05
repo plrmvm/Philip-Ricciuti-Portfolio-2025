@@ -85,13 +85,6 @@
     background-color: var(--active-color);
 }
 
-/* Respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .sidebar-text, .nav-dot {
-        transition: none !important;
-        transform: none !important;
-    }
-}
 
 .sidebar-nav:hover .sidebar-text:not(:hover) .nav-dot.active {
     background-color: #e0e0e0;
@@ -150,17 +143,6 @@
     background-color: #000;
 }
 
-.hamburger-button {
-    font-size: 50px;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top: 15px;
-    right: 15px;
-    visibility: hidden;
-    z-index: 8;
-}
-
 .sidebar-email {
     margin-bottom: 38px;
 }
@@ -172,7 +154,12 @@
     .sidebar-email {
         visibility: hidden;
     }
-    .hamburger-button {
-        visibility: visible;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-text, .nav-dot {
+        transition: none !important;
+        transform: none !important;
     }
 }

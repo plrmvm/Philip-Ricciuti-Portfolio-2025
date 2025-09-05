@@ -12,6 +12,8 @@
 @import "contact.css";
 /* import transition styles */
 @import "transition.css";
+/* import mobile navigation menu styles */
+@import "mobile.css";
 
 :root {
     --sidebar-width: 250px;
@@ -47,5 +49,6 @@ body {
 @media screen and (max-width: 800px) {
     .main-content{
         margin-left: calc(var(--margin-size));;
+        margin-top: 150px;
     }
 }
