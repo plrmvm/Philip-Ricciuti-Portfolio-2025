@@ -147,7 +147,11 @@
     margin-bottom: 38px;
 }
 
-@media screen and (max-width: 800px) {
+
+/* ----------RULES---------- */
+
+
+@media screen and (max-width: 480px) {
     .sidebar {
         visibility: hidden;
     }

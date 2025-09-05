@@ -19,7 +19,7 @@
     --sidebar-width: 250px;
     --margin-size: 25px;
     --active-color: #5767bf;
-    --contact-gap: 12px
+    --contact-gap: 12px;
 }
 
 .main-content{
@@ -46,7 +46,11 @@ body {
     margin-bottom: 150px;
 }
 
-@media screen and (max-width: 800px) {
+
+/* ----------RULES---------- */
+
+
+@media screen and (max-width: 480px) {
     .main-content{
         margin-left: calc(var(--margin-size));;
         margin-top: 150px;

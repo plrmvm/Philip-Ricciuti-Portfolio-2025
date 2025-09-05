@@ -109,15 +109,21 @@ footer{
     font-size: 20.5px;
 }
 
-/* RULES */
+/* ----------RULES---------- */
 
-@media screen and (max-width: 1425px) {
+@media screen and (max-width: 1280px) {
     h1 {
         font-size: 57px;
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
     h1 {
         font-size: 60px;
     }

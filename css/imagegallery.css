@@ -27,20 +27,6 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 1400px) {
-    .img-gallery-column {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .img-gallery-column {
-        width: 100%;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
 #lightbox {
     position: fixed;
     z-index: 1;
@@ -61,4 +47,22 @@
     max-width: 90%;
     max-height: 90%;
     border:5px solid #fff;
+}
+
+
+/* ----------RULES---------- */
+
+
+@media screen and (max-width: 1280px) {
+    .img-gallery-column {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .img-gallery-column {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
