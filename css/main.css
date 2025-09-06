@@ -12,12 +12,14 @@
 @import "contact.css";
 /* import transition styles */
 @import "transition.css";
+/* import mobile navigation menu styles */
+@import "mobile.css";
 
 :root {
     --sidebar-width: 250px;
     --margin-size: 25px;
-    --active-color: #87e61a;
-    --contact-gap: 12px
+    --active-color: #5767bf;
+    --contact-gap: 12px;
 }
 
 header {
@@ -70,8 +72,27 @@ body {
     margin-bottom: 150px;
 }
 
-@media screen and (max-width: 890px) {
+
+/* ----------RULES---------- */
+
+
+@media screen and (max-width: 480px) {
     .main-content{
-        margin-left: calc(var(--margin-size));
+        margin-left: calc(var(--margin-size));;
+        margin-top: 150px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+    .main-content{
+        margin-left: calc(var(--margin-size));;
+        margin-top: 150px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 900px) and (max-height: 480px) {
+    .main-content{
+        margin-left: calc(var(--margin-size));;
+        margin-top: 150px;
     }
 }
