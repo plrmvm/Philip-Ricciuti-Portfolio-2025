@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.createElement('div');
 
     function setColumnCount() {
-        let columnCount = 4;
+        let columnCount = 5;
+        if (window.innerWidth <= 1920) {
+            columnCount = 4;
+        }
         if (window.innerWidth < 1534) {
             columnCount = 3;
         }
