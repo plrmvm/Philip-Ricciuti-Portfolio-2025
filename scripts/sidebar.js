@@ -37,41 +37,4 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         document.body.insertBefore(sidebar, document.body.firstChild);
     }
-
-    let hamburger = document.querySelector('.hamburger-button');
-    if (!hamburger) {
-        hamburger = document.createElement('button');
-        hamburger.className = 'hamburger-button';
-        hamburger.innerHTML = '&#9776;';
-        hamburger.style.visibility = 'hidden';
-        document.body.appendChild(hamburger);
-        document.querySelector('header').appendChild(hamburger);
-    }
-
-    const sidebar = document.querySelector('.sidebar');
-    function updateSidebarVisibility() {
-        if (window.innerWidth < 890) {
-            document.querySelector('header').style.height = '40px';
-            sidebar.classList.add('sidebar-invisible');
-            hamburger.style.visibility = 'visible';
-        } else {
-            document.querySelector('header').style.height = 'auto';
-            sidebar.classList.remove('sidebar-invisible');
-            hamburger.style.visibility = 'hidden';
-        }
-    }
-
-    hamburger.addEventListener('click', () => {
-        const isVisible = sidebar.classList.toggle('sidebar-invisible');
-        if (sidebar.classList.contains('sidebar-invisible')) {
-            hamburger.innerHTML = '&#9776;'; // Hamburger icon
-            hamburger.style.fontSize = '2em';
-        } else {
-            hamburger.innerHTML = '&times;'; // Cross icon
-            hamburger.style.fontSize = '2.75em';
-        }
-    });
-
-    window.addEventListener('resize', updateSidebarVisibility);
-    updateSidebarVisibility();
 })

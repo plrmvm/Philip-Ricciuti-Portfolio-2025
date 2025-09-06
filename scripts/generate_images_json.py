@@ -15,11 +15,11 @@ OUTPUT_JSON = os.path.join(OUTPUT_DIR, 'images.json')
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
-webp_files = [f for f in os.listdir(IMAGES_DIR) if f.lower().endswith('.webp')]
+jpg_files = [f for f in os.listdir(IMAGES_DIR) if f.lower().endswith('.jpg')]
 
 if not os.path.exists(OUTPUT_JSON):
     # create new file with no descriptions
-    images = [Image(id=i+1, filename=filename, description="") for i, filename in enumerate(webp_files)]
+    images = [Image(id=i+1, filename=filename, description="") for i, filename in enumerate(jpg_files)]
     images_dicts = [image.__dict__ for image in images]
     with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
         json.dump(images_dicts, f, indent=2)
@@ -35,7 +35,7 @@ else:
     updated_images.extend(existing_images)
 
     new_images = []
-    for filename in webp_files:
+    for filename in jpg_files:
         if filename not in existing_filenames:
             max_id += 1
             new_images.append(Image(id=max_id, filename=filename, description=""))
