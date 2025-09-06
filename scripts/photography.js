@@ -1,5 +1,29 @@
+const images = [];
+
+class Image {
+    constructor(id, filename, description) {
+        this.id = id;
+        this.filename = filename;
+        this.description = description;
+    }
+}
+
+function fetchImages() {
+    fetch('../images/json/images.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(item => {
+                const image = new Image(item.id, item.filename, item.description);
+                images.push(image);
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
+    fetchImages();
     const imagesDir = '../images/photography/';
     const container = document.createElement('div');
 
@@ -24,32 +48,31 @@ document.addEventListener('DOMContentLoaded', () => {
     container.style.width = '100%';
     container.style.maxWidth = '100%';
     container.style.marginTop = '20px';
-    // container.id = 'lightbox';
 
     setColumnCount();
     window.addEventListener('resize', setColumnCount);
 
-    fetch('../images/json/images.json')
-        .then(response => response.json())
-        .then(images => {
-            images.forEach(image => {
-                const img = document.createElement('img');
-                img.src = imagesDir + image.filename;
-                img.alt = image.filename;
-                img.className = 'photography-img';
-                img.loading = 'lazy';
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 2s, transform 0.1s ease';
-                img.addEventListener('load', () => {
-                    img.style.opacity = '1';
-                });
-                container.appendChild(img);
+    function renderImages() {
+        if (images.length === 0) {
+            setTimeout(renderImages, 10);
+            return;
+        }
+        images.forEach(imageObj => {
+            const img = document.createElement('img');
+            img.src = imagesDir + imageObj.filename;
+            img.alt = imageObj.description || imageObj.filename;
+            img.className = 'photography-img';
+            img.loading = 'lazy';
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 2s, transform 0.1s ease';
+            img.addEventListener('load', () => {
+                img.style.opacity = '1';
             });
-        })
-        .catch(error => {
-            container.textContent = 'Failed to load images.';
-            console.error('Error loading images.json:', error);
+            container.appendChild(img);
         });
+    }
+
+    renderImages();
 
     const mainContent = document.querySelector('.main-content .container');
     if (mainContent) {
