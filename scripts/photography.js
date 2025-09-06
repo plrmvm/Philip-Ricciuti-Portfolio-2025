@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             container.appendChild(img);
         });
+        document.getElementById('photography-gallery').appendChild(container);
     }
 
     renderImages();
