@@ -14,16 +14,14 @@
 
 .photography-img{
     max-width: 100%; /* Ensures the image doesn't exceed the column's width */
-    height: auto;    /* Maintains the image's aspect ratio */
-    display: block;  /* Prevents extra space below the image */
     border-radius: 3px;
-    margin-top: 20px;
-    transition:transform 0.25s ease;
+    transition:transform 0.1s ease;
     object-fit: cover;
+    margin-bottom: 8px;
 }
 
 .photography-img:hover{
-    transform:scale(1.02);
+    transform:scale(1.01);
     cursor: pointer;
 }
 

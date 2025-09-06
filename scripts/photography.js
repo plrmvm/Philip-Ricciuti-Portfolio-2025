@@ -32,8 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const img = document.createElement('img');
                 img.src = imagesDir + image.filename;
                 img.alt = image.filename;
-                img.style.maxWidth = '100%';
-                img.style.marginBottom = '8px';
+                img.className = 'photography-img';
+                img.loading = 'lazy';
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 2s';
+                img.addEventListener('load', () => {
+                    img.style.opacity = '1';
+                });
                 container.appendChild(img);
             });
         })
