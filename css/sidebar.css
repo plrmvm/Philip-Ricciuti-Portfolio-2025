@@ -150,6 +150,9 @@
 
 /* ----------RULES---------- */
 
+/* Mobile width under 480px no checking portrait (iphone vertical):
+    - sidebar & email hidden
+ */
 
 @media screen and (max-width: 480px) {
     .sidebar {
@@ -159,6 +162,10 @@
         visibility: hidden;
     }
 }
+
+/* Mobile width over 768px w/ checking if it's portrait (for vertical ipad or vertical minimized desktop):
+    - sidebar & email hidden
+ */
 
 @media (orientation: portrait) and (min-width: 768px) {
     .sidebar {

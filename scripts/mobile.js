@@ -1,24 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector('.hamburger-button');
     const menu = document.querySelector('.mobile-nav-menu');
-    const main_content = document.querySelector('.main-content');
+    const hamburger_button = document.querySelector('.hamburger-button');
+    const close_button = document.querySelector('.close-button');
     let clicked = false;
-    button.addEventListener("click", () => {
-        console.log("clicked")
+    hamburger_button.addEventListener("click", () => {
         if (clicked == false) {
             menu.zIndex = "8";
             menu.style.visibility = "visible";
+            hamburger_button.style.visibility = "hidden";
+            close_button.style.visibility = "visible";
             menu.style.opacity = "1";
             clicked = true;
         }
-        else {
+    })
+    close_button.addEventListener("click", () => {
+        if (clicked == true) {
             menu.style.opacity = "0";
             menu.style.visibility = "hidden";
+            close_button.style.visibility = "hidden";
+            hamburger_button.style.visibility = "visible"
             menu.zIndex = "-1";
             clicked = false;
         }
-
-
         // Button turn to X
         //
     })
