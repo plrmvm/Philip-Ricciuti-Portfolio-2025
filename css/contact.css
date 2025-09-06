@@ -21,7 +21,7 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 890px) {
     .contact-container{
         margin-top: 80px;
         grid-template-columns: repeat(1, minmax(200px, 1fr));

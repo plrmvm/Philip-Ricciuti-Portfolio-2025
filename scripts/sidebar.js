@@ -2,6 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!document.querySelector('.sidebar')) {
         const sidebar = document.createElement('div');
         sidebar.className = 'sidebar';
+        const navItems = [
+            { href: "index.html", label: "3D Design" },
+            { href: "photography.html", label: "Photography" },
+            { href: "about.html", label: "About" },
+            { href: "contact.html", label: "Contact" }
+        ];
         sidebar.innerHTML = `
             <div class="sidebar-logo">
                 <a href="index.html" class="nameblock">PHILIP <br>RICCIUTI<br></a>
@@ -11,30 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="sidebar-nav">
                 <ul>
+                    ${navItems.map(item => {
+                        const isActive = window.location.pathname.endsWith(item.href) ? ' active' : '';
+                        return `
                     <li class="sidebar-item">
-                        <a href="index.html" class="sidebar-text${window.location.pathname.endsWith('index.html') ? ' active' : ''}">
-                            <span class="nav-dot${window.location.pathname.endsWith('index.html') ? ' active' : ''}"></span>
-                            3D Design
+                        <a href="${item.href}" class="sidebar-text${isActive}">
+                        <span class="nav-dot${isActive}"></span>
+                        ${item.label}
                         </a>
                     </li>
-                    <li class="sidebar-item">
-                        <a href="photography.html" class="sidebar-text${window.location.pathname.endsWith('photography.html') ? ' active' : ''}">
-                            <span class="nav-dot${window.location.pathname.endsWith('photography.html') ? ' active' : ''}"></span>
-                            Photography
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="about.html" class="sidebar-text${window.location.pathname.endsWith('about.html') ? ' active' : ''}">
-                            <span class="nav-dot${window.location.pathname.endsWith('about.html') ? ' active' : ''}"></span>
-                            About
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="contact.html" class="sidebar-text${window.location.pathname.endsWith('contact.html') ? ' active' : ''}">
-                            <span class="nav-dot${window.location.pathname.endsWith('contact.html') ? ' active' : ''}"></span>
-                            Contact
-                        </a>
-                    </li>
+                    `;
+                    }).join('')}
                 </ul>
             </div>
             <div class="sidebar-blank">
@@ -44,27 +37,41 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         document.body.insertBefore(sidebar, document.body.firstChild);
     }
-    const button = document.querySelector('.hamburger-button');
+
+    let hamburger = document.querySelector('.hamburger-button');
+    if (!hamburger) {
+        hamburger = document.createElement('button');
+        hamburger.className = 'hamburger-button';
+        hamburger.innerHTML = '&#9776;';
+        hamburger.style.visibility = 'hidden';
+        document.body.appendChild(hamburger);
+        document.querySelector('header').appendChild(hamburger);
+    }
+
     const sidebar = document.querySelector('.sidebar');
-    const main_content = document.querySelector('.main-content');
-    let clicked = false;
-    button.addEventListener("click", () => {
-        console.log("clicked")
-        if (clicked == false) {
-            sidebar.style.visibility = "visible";
-            sidebar.style.opacity = "1";
-            main_content.style.opacity = "0";
-            clicked = true;
+    function updateSidebarVisibility() {
+        if (window.innerWidth < 890) {
+            document.querySelector('header').style.height = '40px';
+            sidebar.classList.add('sidebar-invisible');
+            hamburger.style.visibility = 'visible';
+        } else {
+            document.querySelector('header').style.height = 'auto';
+            sidebar.classList.remove('sidebar-invisible');
+            hamburger.style.visibility = 'hidden';
         }
-        else {
-            main_content.style.opacity = "1";
-            sidebar.style.opacity = "0";
-            sidebar.style.visibility = "hidden";
-            clicked = false;
+    }
+
+    hamburger.addEventListener('click', () => {
+        const isVisible = sidebar.classList.toggle('sidebar-invisible');
+        if (sidebar.classList.contains('sidebar-invisible')) {
+            hamburger.innerHTML = '&#9776;'; // Hamburger icon
+            hamburger.style.fontSize = '2em';
+        } else {
+            hamburger.innerHTML = '&times;'; // Cross icon
+            hamburger.style.fontSize = '2.75em';
         }
+    });
 
-
-        // Button turn to X
-        //
-    })
+    window.addEventListener('resize', updateSidebarVisibility);
+    updateSidebarVisibility();
 })

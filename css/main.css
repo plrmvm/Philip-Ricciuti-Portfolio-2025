@@ -16,8 +16,33 @@
 :root {
     --sidebar-width: 250px;
     --margin-size: 25px;
-    --active-color: #5767bf;
+    --active-color: #87e61a;
     --contact-gap: 12px
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-bottom: 32px;
+}
+header h1 {
+    margin: 0;
+    flex: 1 1 auto;
+}
+header .hamburger-button {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: none;
+    flex-shrink: 0;
+    position: static;
+    top: auto;
+    right: auto;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 .main-content{
@@ -29,7 +54,8 @@
     margin-right: var(--margin-size);
     margin-top: var(--margin-size);
     text-align: left;
-}
+    z-index: 1;
+} 
 
 .main-content > div{
     position: relative;
@@ -44,8 +70,8 @@ body {
     margin-bottom: 150px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 890px) {
     .main-content{
-        margin-left: calc(var(--margin-size));;
+        margin-left: calc(var(--margin-size));
     }
 }
