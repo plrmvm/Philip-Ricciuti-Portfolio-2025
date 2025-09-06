@@ -160,10 +160,20 @@
     }
 }
 
-/* Respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .sidebar-text, .nav-dot {
-        transition: none !important;
-        transform: none !important;
+@media (orientation: portrait) and (min-width: 768px) {
+    .sidebar {
+        visibility: hidden;
+    }
+    .sidebar-email {
+        visibility: hidden;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 900px) and (max-height: 480px) {
+    .sidebar {
+        visibility: hidden;
+    }
+    .sidebar-email {
+        visibility: hidden;
     }
 }
