@@ -2,14 +2,28 @@
 document.addEventListener('DOMContentLoaded', () => {
     const imagesDir = '../images/photography/';
     const container = document.createElement('div');
-    let columnCount = 3;
-    if (window.innerWidth < 600) {
-        columnCount = 1;
+
+    function setColumnCount() {
+        let columnCount = 4;
+        if (window.innerWidth < 1534) {
+            columnCount = 3;
+        }
+        if (window.innerWidth < 1124) {
+            columnCount = 2;
+        }
+        if (window.innerWidth < 600) {
+            columnCount = 1;
+        }
+        container.style.columnCount = `${columnCount}`;
     }
-    container.style.columnCount = `${columnCount}`;
+
     container.style.columnGap = '16px';
     container.style.width = '100%';
-    container.style.maxWidth = '1200px';
+    container.style.maxWidth = '100%';
+    container.style.marginTop = '20px';
+
+    setColumnCount();
+    window.addEventListener('resize', setColumnCount);
 
     fetch('../images/json/images.json')
         .then(response => response.json())

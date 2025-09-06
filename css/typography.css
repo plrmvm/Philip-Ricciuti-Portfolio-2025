@@ -111,13 +111,13 @@ footer{
 
 /* RULES */
 
-@media screen and (max-width: 1425px) {
+@media screen and (max-width: 1534px) {
     h1 {
         font-size: 57px;
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 860px) {
     h1 {
         font-size: 40px;
     }
