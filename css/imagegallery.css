@@ -15,8 +15,8 @@
 .photography-img{
     max-width: 100%; /* Ensures the image doesn't exceed the column's width */
     border-radius: 3px;
-    transition:transform 0.1s ease;
-    object-fit: cover;
+    transition: transform 0.25s ease;
+    /* object-fit: cover; */
     margin-bottom: 8px;
 }
 

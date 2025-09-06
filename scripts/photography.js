@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.style.width = '100%';
     container.style.maxWidth = '100%';
     container.style.marginTop = '20px';
+    // container.id = 'lightbox';
 
     setColumnCount();
     window.addEventListener('resize', setColumnCount);
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.className = 'photography-img';
                 img.loading = 'lazy';
                 img.style.opacity = '0';
-                img.style.transition = 'opacity 2s';
+                img.style.transition = 'opacity 2s, transform 0.1s ease';
                 img.addEventListener('load', () => {
                     img.style.opacity = '1';
                 });
