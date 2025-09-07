@@ -1,4 +1,4 @@
-.project-img{
+.project-thumbnail{
     width: 100%;
     aspect-ratio: 2.37/1;
     object-fit: cover;
@@ -8,7 +8,12 @@
     transition: border 0.2s ease-in-out, transform 0.2s ease-in-out;
     position: relative;
 }
-.project-img:hover{
+.project-thumbnail:hover{
     transform:scale(1.02);
     cursor: pointer;
+}
+
+.project-image{ /* ----------USE ASE A BASE FOR IMAGES THEN STYLE THE REST INLINE PER IMAGE---------- */
+    margin: 10px;
+    border-radius: 3px;
 }
