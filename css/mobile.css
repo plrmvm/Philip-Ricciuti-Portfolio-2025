@@ -54,10 +54,6 @@
     text-decoration: none;
     font-weight: 300;
     color: #000000;
-    transition:
-            color 260ms ease,
-            opacity 360ms ease,
-            transform 400ms cubic-bezier(.2, .8, .2, 1);
     margin-top: 30px;
     margin-bottom: 30px;
 }

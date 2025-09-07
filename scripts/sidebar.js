@@ -34,6 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 <footer class="sidebar-email">PhilipRicciuti@outlook.com</footer>
             </div>
             <div class="sidebar-line"></div>
+            <div class="mobile-nav-mask"></div>
+            <div class="mobile-nav">
+                <div class = mobile-nav-top>
+                    <div class="mobile-button-container">
+                        <div class="hamburger-button">
+                            <div class="hamburger-line"></div>
+                            <div class="hamburger-line"></div>
+                            <div class="hamburger-line"></div>
+                        </div>
+                        <div class="close-button">&times</div>
+                    </div>
+                    <a href="index.html" class="mobile-nameblock">PHILIP <br>RICCIUTI <br></a>
+                    <a href="index.html" class="mobile-nameblock-subtext">3D ARTIST & DESIGNER</a>
+                    <div class="mobile-horizontal-line"></div>
+                </div>
+                <div class = mobile-nav-menu>
+                    <a href="index.html" class="mobile-nav-links">3D DESIGN</a><br>
+                    <a href="photography.html" class="mobile-nav-links">PHOTOGRAPHY</a><br>
+                    <a href="about.html" class="mobile-nav-links">ABOUT</a><br>
+                    <a href="contact.html" class="mobile-nav-links active">CONTACT</a><br>
+                </div>
+                </div>
+            </div>
         `;
         document.body.insertBefore(sidebar, document.body.firstChild);
     }
