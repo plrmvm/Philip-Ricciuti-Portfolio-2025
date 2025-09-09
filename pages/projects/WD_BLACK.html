@@ -11,26 +11,53 @@
                 font-size: 15vw;
             }
         }
-        .wd_black_hero_2{
-            height: 50%;
+        .wd_black_hero{
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            margin-bottom: 12px
+        }
+        .image-block-1{
+            width: 100%;
+            display: flex
+        }
+        .img-pair {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: 0.8fr 2fr; /* ← ratios as fr units */             /* optional spacing */
+            width: 100%;               /* fill parent container */
+        }
+        .img-pair > img {
+            width: 100%;
+            height: auto;              /* no crop, keeps real aspect */
             display: block;
         }
-        .wd-image-hero{
-            height: 50%;
-            display: block;
-        }
-        .wd_black_overview{
-            width: 50%;
-            display: block;
-        }
-
     </style>
 </head>
 <body>
 <div class="main-content">
     <header>
-        <h1>WD BLACK</h1>
+        <h1>3D DESIGN<br></h1>
     </header>
+    <div id="project-name-container">
+        <h2 class="project-name">WD BLACK HARD DRIVE / 2025</h2>
+    </div>
+    <div class="project-line"></div>
+    <p class="paragraph-style-1">This 4TB hard drive by Western Digital is a sturdy and rugged hard drive designed for
+        gamers and creators with the most demanding storage requirements. It showcases a sleek black anodized aluminum
+        case with an industrial look. I created this model in late 2021 as a freshman at Rochester Institute of
+        Technology, using reference off of my own WD Black hard drive that I still use to this day. I revamped the model
+        and rerendered the entire project in 2024. The drive was created using subdivision modeling in Blender, while
+        being textured in Substance Painter with Greyscalegorilla materials as a base. All images were lit and
+        rendered in Cycles.</p>
+    <div class="image-block-1">
+        <img src="../../images/projects/WD_BLACK/wd_black_hero_2_result.jpg" alt="" class="wd_black_hero">
+    </div>
+    <div class="img-pair">
+        <img src="../../images/projects/WD_BLACK/wd_black_hero_result.jpg" alt="">
+        <img src="../../images/projects/WD_BLACK/wd_black_overview_result.jpg" alt="">
+    </div>
+    <div class="main-content-bottom-margin"></div>
 </div>
 <div class="transition-block-edge"></div>
 <div class="transition-block"></div>
@@ -41,6 +68,35 @@
     <script defer src="../../scripts/sidebar.js"></script>
     <script defer src="../../scripts/transition.js"></script>
     <script defer src="../../scripts/mobile.js"></script>
+    <script>
+        function whenReady(img) {
+            // Prefer decode() (no layout), fall back to onload if needed
+            return img.decode ? img.decode().catch(()=>{}) :
+                new Promise(res => (img.complete ? res() : img.addEventListener('load', res, {once:true})));
+        }
+
+        async function fitPair(pair) {
+            const imgs = pair.querySelectorAll('img');
+            if (imgs.length !== 2) return;
+            const [a, b] = imgs;
+
+            await Promise.all([whenReady(a), whenReady(b)]);
+
+            const r1 = a.naturalWidth / a.naturalHeight;
+            const r2 = b.naturalWidth / b.naturalHeight;
+
+            const w1 = (r1 / (r1 + r2)) * 100;
+            const w2 = 100 - w1;
+
+            pair.style.setProperty('--w1', w1);
+            pair.style.setProperty('--w2', w2);
+        }
+
+        // Init for all pairs on the page
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.img-pair').forEach(fitPair);
+        });
+    </script>
 </div>
 </body>
 </html>

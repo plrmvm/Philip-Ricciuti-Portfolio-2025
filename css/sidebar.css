@@ -70,7 +70,6 @@
     border-radius: 1px;
     margin-right: 10px;
     flex-shrink: 0;
-
     transition:
         transform 400ms cubic-bezier(.2, .8, .2, 1),
         background-color 400ms ease;

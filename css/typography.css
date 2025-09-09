@@ -41,6 +41,10 @@ h2{
     margin-top: 0;
 }
 
+
+
+
+
 h3{
     font-size: 24px;
     font-weight: 700;
@@ -53,17 +57,7 @@ p{
     line-height: 1.5;
     margin-top: 0;
 }
-.project-title{
-    font-size: 24px;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 0;
-    letter-spacing: 0.02em;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    color: #ffffff;
-}
+
 
 .about-text{
     display: inline-block;

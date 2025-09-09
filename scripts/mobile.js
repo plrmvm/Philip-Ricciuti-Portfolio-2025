@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 hamburger_button.style.visibility = "visible"
                 menu.zIndex = "-1";
                 clicked = false;
+                // add event listener to see if screen is correct size
+                    // if screen is under 768px then it goes away
             })
         }
         // Button turn to X
