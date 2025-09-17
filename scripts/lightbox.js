@@ -8,10 +8,13 @@ lightbox.style.opacity = '0';
 lightbox.style.transition = transition;
 document.body.appendChild(lightbox);
 
+// Make a list of all class types that the lightbox can attatch to
+
+const img_classlist = ['photography-img', 'project-img', 'project-fill-width'];
 
 document.body.addEventListener('click', function (e) {
     const image = e.target;
-    if (image.classList && image.classList.contains('photography-img')) {
+    if (image.classList && image.classList.contains('photography-img')) { //instead of contains find another func to test if in img-classlist
         lightbox.classList.add('active');
         const htmlImg = document.createElement('img');
         htmlImg.src = image.src;

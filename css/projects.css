@@ -36,8 +36,8 @@
     margin-left: 20px;
 }
 .project-name{
-    font-size: 50px;
-    font-weight: 300;
+    font-size: 70px;
+    font-weight: 800;
     margin-top: 0;
     margin-bottom: 0px;
     white-space: nowrap;
@@ -58,4 +58,54 @@
     font-weight: 350;
     margin-top: 12px;
     margin-bottom: 25px;
+}
+.project-fill-width{
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    margin-bottom: 12px
+}
+.frame-video{
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+}
+.program-header{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    width: 100%;
+    margin-top: 6px;
+}
+.program-list{
+    text-align: right;
+    font-weight: 200;
+    font-size: 18px;
+    vertical-align: center;
+}
+.image-block-1{
+    width: 100%;
+    display: flex
+}
+.img-triplet {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr 1fr; /* ← ratios as fr units */             /* optional spacing */
+    width: 100%;               /* fill parent container */
+}
+.img-triplet > img {
+    width: 100%;
+    height: auto;              /* no crop, keeps real aspect */
+    display: block;
+}
+.img-pair {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 12.5px;
+    grid-template-columns: 1fr 1fr; /* ← ratios as fr units */             /* optional spacing */
+    width: 100%;               /* fill parent container */
+}
+.img-pair > img {
+    width: 100%;
+    height: auto;              /* no crop, keeps real aspect */
+    display: block;
 }
