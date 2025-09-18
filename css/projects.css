@@ -12,7 +12,15 @@
     transform:scale(1.02);
     cursor: pointer;
 }
-
+.project-thumbnail-image{
+    width: 100%;
+    aspect-ratio: 2.37/1;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 0 solid #e0e0e0;
+    transition: border 0.2s ease-in-out, transform 0.2s ease-in-out;
+    position: relative;
+}
 .project-image{ /* ----------USE ASE A BASE FOR IMAGES THEN STYLE THE REST INLINE PER IMAGE---------- */
     margin: 10px;
     border-radius: 5px;
@@ -23,7 +31,6 @@
     height: 0px;
     border-bottom: 1px solid #000000;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 .dot{
     display: inline-block;
@@ -57,18 +64,18 @@
     font-size: 16px;
     font-weight: 350;
     margin-top: 12px;
-    margin-bottom: 25px;
 }
 .project-fill-width{
     object-fit: cover;
     width: 100%;
     display: block;
-    margin-bottom: 12px
+    margin-top: 10px;
 }
 .frame-video{
     width: 100%;
     height: 50vw;
     object-fit: cover;
+    margin-top: 10px;
 }
 .program-header{
     display: grid;
@@ -91,6 +98,7 @@
     gap: 12px;
     grid-template-columns: 1fr 1fr 1fr; /* ← ratios as fr units */             /* optional spacing */
     width: 100%;               /* fill parent container */
+    margin-top: 10px;
 }
 .img-triplet > img {
     width: 100%;
@@ -100,11 +108,23 @@
 .img-pair {
     display: grid;
     gap: 12px;
-    margin-bottom: 12.5px;
     grid-template-columns: 1fr 1fr; /* ← ratios as fr units */             /* optional spacing */
     width: 100%;               /* fill parent container */
+    margin-top: 10px;
 }
 .img-pair > img {
+    width: 100%;
+    height: auto;              /* no crop, keeps real aspect */
+    display: block;
+}
+.img-quad {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* ← ratios as fr units */             /* optional spacing */
+    width: 100%;               /* fill parent container */
+    margin-top: 10px;
+}
+.img-quad > img {
     width: 100%;
     height: auto;              /* no crop, keeps real aspect */
     display: block;
