@@ -49,6 +49,10 @@
     display: none;
 }
 
+#lightbox:hover {
+    cursor: zoom-out;
+}
+
 #lightbox.active {
     display: flex;
     justify-content: center;
@@ -61,3 +65,9 @@
     border:5px solid #fff;
 }
 
+.for-lightbox{
+}
+
+.for-lightbox:hover{
+    cursor: pointer;
+}

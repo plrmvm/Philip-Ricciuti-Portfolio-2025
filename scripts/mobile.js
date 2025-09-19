@@ -45,6 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 hamburger_button.style.visibility = "visible"
                 menu.zIndex = "-1";
                 clicked = false;
+                if (window.innerWidth > 768) {
+                    hamburger_button.style.visibility = "hidden"
+                }
+                else {
+                    hamburger_button.style.visibility = "visible"
+                }
                 // add event listener to see if screen is correct size
                     // if screen is under 768px then it goes away
             })
@@ -52,4 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // Button turn to X
         //
     })
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+            hamburger_button.style.visibility = "hidden"
+        }
+        else {
+            hamburger_button.style.visibility = "visible"
+        }
+    })
+
 })

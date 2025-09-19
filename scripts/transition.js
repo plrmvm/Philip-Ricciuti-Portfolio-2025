@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const D = 0.6;
 
     function pageTransitionLoad() {
-        gsap.to('.transition-block-edge', { y: 2000, duration: D, ease, delay: 0.25 });
-        gsap.to('.transition-block',      { y: 2000, duration: D, ease, delay: 0.15 });
+        gsap.to('.transition-block',      { opacity: 0, duration: 1, ease, delay: 0 });
+        gsap.to('.transition-block-edge', { y: 2000, duration: 0, ease, delay: 0 });
+        gsap.to('.transition-block',      { y: 2000, duration: 0, ease, delay: 1 });
+        gsap.to('.transition-block',      { opacity: 1, duration: 0, ease, delay: 1 });
 
         // Optional: SplitText if present
         try {

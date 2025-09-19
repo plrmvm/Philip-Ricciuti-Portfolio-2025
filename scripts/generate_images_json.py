@@ -1,11 +1,13 @@
 import os
 import json
+import PIL
 
 class Image:
-    def __init__(self, id: int, filename: str, description: str):
+    def __init__(self, id: int, filename: str, description: str, dimensions: tuple[int, int]):
         self.id = id
         self.filename = filename
         self.description = description
+        self.dimensions = dimensions
 
 IMAGES_DIR = os.path.join(os.path.dirname(__file__), '../images/photography')
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '../images/json/')
@@ -38,7 +40,7 @@ else:
     for filename in jpg_files:
         if filename not in existing_filenames:
             max_id += 1
-            new_images.append(Image(id=max_id, filename=filename, description=""))
+            new_images.append(Image(id=max_id, filename=filename, description="", dimensions=file_dimensions))
     updated_images.extend([img.__dict__ for img in new_images])
     with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
         json.dump(updated_images, f, indent=2)

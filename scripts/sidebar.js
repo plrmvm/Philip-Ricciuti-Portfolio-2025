@@ -18,7 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="sidebar-nav">
                 <ul>
                     ${navItems.map(item => {
-                        const isActive = window.location.pathname.endsWith(item.href) ? ' active' : '';
+                        let isActive = '';
+                        if (window.location.pathname.includes('projects')){
+                            if (item.href === "index.html"){
+                                isActive = ' active';
+                                console.log('Project found')
+                            }
+                            item.href = "../" + item.href;
+                        }
+                        else if (window.location.pathname.endsWith(item.href) === true) {
+                            isActive = ' active';
+                        }
+                        else {
+                            isActive = '';       
+                        }
+                        console.log(isActive)
+                        console.log(window.location.pathname)
+                        console.log(item.href)
                         return `
                     <li class="sidebar-item">
                         <a href="${item.href}" class="sidebar-text${isActive}">

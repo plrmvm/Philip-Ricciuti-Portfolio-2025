@@ -22,9 +22,12 @@
     position: relative;
 }
 .project-image{ /* ----------USE ASE A BASE FOR IMAGES THEN STYLE THE REST INLINE PER IMAGE---------- */
-    margin: 10px;
+    margin-top: 10px;
     border-radius: 5px;
     object-fit: cover;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .project-line{
     width: 100%;
@@ -63,7 +66,9 @@
 .paragraph-style-1{
     font-size: 16px;
     font-weight: 350;
-    margin-top: 12px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+
 }
 .project-fill-width{
     object-fit: cover;
@@ -76,6 +81,7 @@
     height: 50vw;
     object-fit: cover;
     margin-top: 10px;
+    margin-bottom: 0px
 }
 .program-header{
     display: grid;
