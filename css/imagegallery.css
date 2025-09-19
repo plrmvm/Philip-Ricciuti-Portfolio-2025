@@ -13,11 +13,14 @@
 }
 
 .photography-img{
+    width: 100%;
+    height: auto;
+    display: block;
     max-width: 100%; /* Ensures the image doesn't exceed the column's width */
     border-radius: 3px;
     transition: transform 0.25s ease;
     /* object-fit: cover; */
-    margin-bottom: 8px;
+    margin-bottom: 12.5px;
 }
 
 .photography-img:hover{

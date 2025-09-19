@@ -1,10 +1,12 @@
 const images = [];
 
 class Image {
-    constructor(id, filename, description) {
+    constructor(id, filename, description, width, height) {
         this.id = id;
         this.filename = filename;
         this.description = description;
+        this.width = width;
+        this.height = height;
     }
 }
 
@@ -13,7 +15,7 @@ function fetchImages() {
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {
-                const image = new Image(item.id, item.filename, item.description);
+                const image = new Image(item.id, item.filename, item.description, item.width, item. height);
                 images.push(image);
             });
         })
@@ -59,17 +61,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         images.forEach(imageObj => {
             const img = document.createElement('img');
+            img.loading = 'lazy';
+            img.decoding = 'async'; // optional, helps decoding off main thread
+
+            // Give the browser a box before the file downloads:
+            if (imageObj.width && imageObj.height) {
+                img.width  = imageObj.width;
+                img.height = imageObj.height;
+                // OR: img.style.aspectRatio = `${imageObj.width} / ${imageObj.height}`;
+            }
+
             img.src = imagesDir + imageObj.filename;
             img.alt = imageObj.description || imageObj.filename;
             img.className = 'photography-img for-lightbox';
-            img.loading = 'lazy';
             img.style.opacity = '0';
-            img.style.transition = 'opacity 2s, transform 0.1s ease';
-            img.addEventListener('load', () => {
-                img.style.opacity = '1';
-            });
+            img.addEventListener('load', () => { img.style.opacity = '1'; });
+
             container.appendChild(img);
         });
+
         document.getElementById('photography-gallery').appendChild(container);
     }
 

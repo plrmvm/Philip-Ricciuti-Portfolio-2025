@@ -64,9 +64,13 @@ p{
 .about-text{
     display: inline-block;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5;
-    margin-top: 10;
+    margin-bottom: 10px;
+}
+
+.about-text-container{
+    margin-left: 10px;
 }
 
 footer{
@@ -127,5 +131,8 @@ footer{
     }
     p{
         font-size: 16px;
+    }
+    .contact-text{
+        font-size: 25px;
     }
 }

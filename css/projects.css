@@ -14,6 +14,9 @@
 }
 .project-thumbnail-image{
     width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%; /* Ensures the image doesn't exceed the column's width */
     aspect-ratio: 2.37/1;
     object-fit: cover;
     border-radius: 3px;

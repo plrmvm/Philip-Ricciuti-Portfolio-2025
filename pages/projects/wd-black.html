@@ -4,18 +4,29 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Philip Ricciuti - WD BLACK</title>
     <link rel="stylesheet" href="../../css/main.css">
-    <link rel="icon" href="../../images/logo.ico" type="image/x-icon">
+    <link rel="icon" href="../../images/LOGO.ico" type="image/x-icon">
     <style>
-        @media screen and (max-width: 768px) {
-            h1{
-                font-size: 15vw;
-            }
-        }
         .img-pair {
             display: grid;
             gap: 12px;
             grid-template-columns: 0.8fr 2fr; /* ← ratios as fr units */             /* optional spacing */
             width: 100%;               /* fill parent container */
+        }
+        @media screen and (max-width: 768px) {
+            h1{
+                font-size: 15vw;
+            }
+        }
+        @media screen and (max-width: 470px) {
+            .program-list{
+                visibility: hidden;
+                font-size: 1px;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            h1{
+                font-size: 14vw;
+            }
         }
     </style>
 </head>

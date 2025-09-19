@@ -4,7 +4,7 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>PHILIP RICCIUTI - ABOUT</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="icon" href="../images/LOGO.ico" type="image/x-icon">
     <style>
         .about-img{
             aspect-ratio: 1;
@@ -12,29 +12,41 @@
         }
         .img-pair {
             grid-template-columns: 1fr 1.3fr;
-            margin-top: 12.5px;
+            margin-top: 16px;
         }
         .credits {
+            display: inline;
             font-size: 10px;
             font-weight: 300;
             color: #707070;
-            margin-top: 4px;
         }
-        .about-header{
-            margin-bottom: 0;
-            font-weight: 600;
+        .louan{
+            display: inline;
+            font-size: 9px;
+            font-weight: 300;
+            color: #707070;
         }
         @media screen and (max-width: 768px) {
-            h1{
+            h1 {
                 font-size: 16vw;
             }
+        }
+        @media screen and (max-width: 1160px) {
             .img-pair{
                 grid-template-columns: 1fr;
                 margin-top: 12.5px;
             }
-            .about-header{
-                font-size: 8vw;
-                margin-bottom: 10px
+            .about-text-container{
+                margin-left: 0px;
+            }
+        }
+        @media screen and (min-width: 1600px) {
+            .about-text {
+                font-size: 22px;
+            }
+
+            .img-pair {
+                grid-template-columns: 1fr 1.5fr;
             }
         }
     </style>
@@ -47,8 +59,7 @@
     <div class="project-line"></div>
     <div class="img-pair">
         <!-- ABOUT IMG --> <img src="../images/about-me-5.jpg" alt="" class="about-img">
-        <!-- ABOUT TXT --> <div>
-            <h2 class="about-header">PHILIP RICCIUTI</h2>
+        <!-- ABOUT TXT --> <div class="about-text-container">
             <p class="about-text">
                 Philip Ricciuti is a New York City–based 3D designer and street photographer with a degree in 3D
                 Digital Design from the Rochester Institute of Technology and a minor in Jewelry Design.</p>
@@ -63,10 +74,11 @@
                 Outside the studio, he’s a dedicated street photographer with a prolific catalog, constantly
                 shooting and creating as part of his daily rhythm.</p>
         <a href="../documents/resume.pdf" class="resume-download">RESUME</a>
-        <p class="credits">Website coded in WebStorm with scripting assistance from Louan</p>
+        <br><br>
+        <p class="credits">Website coded in WebStorm with scripting assistance from</p>
+        <a href="https://github.com/Gloobinours" class="louan">Louan Flammac</a>
         </div>
     </div>
-
     <div class="main-content-bottom-margin"></div>
 </div>
 <div class="transition-block-edge"></div>
