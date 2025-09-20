@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // ---------- centralize link logic here ----------
         const inProjects = location.pathname.includes("/projects/");
-        const prefix = inProjects ? "../" : "";
+        const prefix = inProjects ? "../../" : "";
 
         // Treat "/index.html" as "/" so both match current homepage
         const normPath = (p) =>
